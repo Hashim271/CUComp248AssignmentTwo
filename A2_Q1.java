@@ -4,7 +4,9 @@
 // For COMP 248 Section S 2262 - Fall 2026
 // Date: 2026-10-10
 //
-//
+// The program asks the user to choose a difficulty level and enter their adventurer name.
+// It then gices the user tthree puzzles to solve and adjusts their score based on their answers and difficulty.
+// Finally, it displays their score and outcome, and asks if they want to save their score to the Hall of Fame.
 //
 // -----------------------------------------------------------------------------------------------------------------------------------
 
@@ -57,8 +59,8 @@ public class A2_Q1 {
         // Puzzle 1: The Combination Lock
         System.out.println("");
         System.out.println("--- Puzzle 1: The Combinantion Lock ---");
-        System.out.println("\"A rusty lock hangs on the door. The sum of the first 5 even");
-        System.out.print("numbers is your code. Enter it:\" ");
+        System.out.println("A rusty lock hangs on the door. The sum of the first 5 even");
+        System.out.print("numbers is your code. Enter it: ");
         int code = scan.nextInt(); // Users code
 
         // Evaluate the user's input for the combination lock puzzle and rounded the score to 2 decimal places
@@ -67,7 +69,7 @@ public class A2_Q1 {
         } else if (code >= 25 && code <= 35) {
             System.out.printf("So close... the lock rattles but holds. [-10 x %.1f = -%.2f pts]%n", multiplier, (10 * multiplier));
             score = score - (10 * multiplier);
-        } else if (code < 25 || code > 35) {
+        } else if (code >= 15 && code <= 45) {
             System.out.printf("The lock doesn't budge. [-20 x %.1f = -%.2f pts]%n", multiplier, (20 * multiplier));
             score = score - (20 * multiplier);
         } else {
@@ -110,7 +112,7 @@ public class A2_Q1 {
         } else if (yearFounded >= 1969 && yearFounded <= 1979) {
             System.out.printf("The vault hums but won't open. [-10 x %.1f = -%.2f pts]%n", multiplier, (10 * multiplier));
             score = score - (10 * multiplier);
-        } else if (yearFounded < 1969 || yearFounded > 1979) {
+        } else if (yearFounded >= 1964 && yearFounded <= 1984) {
             System.out.printf("A wrong combination - alarms flicker. [-20 x %.1f = -%.2f pts]%n", multiplier, (20 * multiplier));
             score = score - (20 * multiplier);
         } else {
